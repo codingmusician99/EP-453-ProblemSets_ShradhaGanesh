@@ -47,13 +47,23 @@ struct VoiceRecordView: View {
             .onDisappear(){
                 controller.stop()
             }
+            //VStack {
+            //    HStack{
+             //       Text("Ring Modulator")
+             //       Spacer()
+              //          .padding()
+                    
+                    
+                    
+                }
+            }
             
             
     }
-}
+
     
     
-}
+
 
 struct VoiceRecordView_Preview: PreviewProvider {
     static var previews: some View {

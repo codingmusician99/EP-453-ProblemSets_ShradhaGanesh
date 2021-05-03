@@ -32,6 +32,7 @@ class VoiceRecorder {
         mic = input
         mixer = Mixer([Fader(mic, gain: 0)])
         
+        addNodes()
         
         
     }
@@ -42,10 +43,11 @@ class VoiceRecorder {
         let pitchshift = PitchShifter(distort)
         let reverb = ZitaReverb(pitchshift)
         mixer.addInput(reverb)
-       // mixer = Mixer([Fader(ringmod, gain: 0)])
-      //  mixer = Mixer([Fader(distort, gain: 0)])
-      //  mixer = Mixer([Fader(pitchshift, gain: 0)])
-     //   mixer = Mixer([Fader(reverb, gain: 0)])
+        mixer = Mixer([Fader(ringmod, gain: 0)])
+        mixer = Mixer([Fader(distort, gain: 0)])
+        mixer = Mixer([Fader(pitchshift, gain: 0)])
+        mixer = Mixer([Fader(reverb, gain: 0)])
+       
         
     }
     
@@ -92,7 +94,7 @@ class VoiceRecorder {
         } catch {
             print("Cannot start AudioKit!")
         }
-        addNodes()
+        
     }
     
     func stop() {
